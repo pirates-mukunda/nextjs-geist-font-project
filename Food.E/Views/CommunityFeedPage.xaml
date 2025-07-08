@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Food.E.Views.CommunityFeedPage"
+             Title="Community Feed">
+
+    <StackLayout Padding="10">
+        <Label Text="Community Feed" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+        <CollectionView x:Name="PostsCollectionView" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" Padding="10" BorderColor="LightGray" CornerRadius="5">
+                        <StackLayout>
+                            <Label Text="{Binding Content}" FontSize="16" />
+                            <Label Text="{Binding CreatedAt, StringFormat='Posted on {0:MMM dd, yyyy HH:mm}'}" FontSize="12" TextColor="Gray" />
+                            <Button Text="View Details" Clicked="OnViewDetailsClicked" CommandParameter="{Binding Id}" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Create New Post" Clicked="OnCreatePostClicked" HorizontalOptions="Center" Margin="10" />
+    </StackLayout>
+
+</ContentPage>
