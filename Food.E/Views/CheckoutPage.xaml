@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Food.E.Views.CheckoutPage"
+             Title="Checkout">
+
+    <StackLayout Padding="10">
+        <Label Text="Checkout" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Label Text="Enter your details below to complete the order." FontSize="16" Margin="0,10,0,20" />
+
+        <Entry x:Name="NameEntry" Placeholder="Full Name" />
+        <Entry x:Name="AddressEntry" Placeholder="Delivery Address" />
+        <Entry x:Name="PhoneEntry" Placeholder="Phone Number" Keyboard="Telephone" />
+
+        <Button Text="Place Order" Clicked="OnPlaceOrderClicked" HorizontalOptions="Center" Margin="10" />
+    </StackLayout>
+
+</ContentPage>
