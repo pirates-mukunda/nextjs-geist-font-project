@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Food.E.Views.CreatePostPage"
+             Title="Create Post">
+
+    <StackLayout Padding="10">
+        <Label Text="Create a New Post" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Editor x:Name="PostContentEditor" Placeholder="Write your post here..." AutoSize="TextChanges" HeightRequest="150" />
+        <Button Text="Submit" Clicked="OnSubmitClicked" HorizontalOptions="Center" Margin="10" />
+    </StackLayout>
+
+</ContentPage>
