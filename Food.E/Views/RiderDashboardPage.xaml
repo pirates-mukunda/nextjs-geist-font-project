@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Food.E.Views.RiderDashboardPage"
+             Title="Rider Dashboard">
+
+    <StackLayout Padding="10">
+        <Label Text="Assigned Deliveries" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+        <CollectionView x:Name="AssignedOrdersCollectionView" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="5" Padding="10" BorderColor="LightGray" CornerRadius="5">
+                        <StackLayout>
+                            <Label Text="{Binding Id}" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="{Binding OrderDate, StringFormat='Ordered on {0:MMM dd, yyyy HH:mm}'}" FontSize="14" />
+                            <Label Text="{Binding Status}" FontSize="14" TextColor="Green" />
+                            <Button Text="Update Status" Clicked="OnUpdateStatusClicked" CommandParameter="{Binding Id}" />
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>
